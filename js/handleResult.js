@@ -9,7 +9,7 @@ export function renderResult(result) {
             if (!resultElement) {
                 resultElement = document.createElement('div');
                 resultElement.id = 'result';
-                document.body.appendChild(resultElement);
+                document.getElementById('root').appendChild(resultElement);
             }
             resultElement.innerText = result;
         })
@@ -20,5 +20,5 @@ export function renderResult(result) {
 
 export function resetResult() {
     let resultElement = document.getElementById('result');
-    resultElement && document.body.removeChild(resultElement);
+    resultElement && document.getElementById('root').removeChild(resultElement);
 }

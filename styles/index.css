@@ -1,6 +1,7 @@
 @import "./text.css";
 @import "./alignment.css";
 @import "./spacing.css";
+@import "./border.css";
 
 *, *::after, *::before {
     box-sizing: border-box;
