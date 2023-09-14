@@ -1,3 +1,5 @@
+import { getNames } from './processResult.js'
+
 let form = document.querySelector('form');
 form.addEventListener('reset', () => resetApp());
 form.addEventListener('submit', (event) => {
@@ -6,7 +8,9 @@ form.addEventListener('submit', (event) => {
 });
 
 function calculateFlames(form) {
-    console.log(form)
+    let flames = ['Friend', 'Love', 'Affection', 'Marriage', 'Enemy', 'Sister'];
+    let [name, partnerName] = getNames(form);
+    console.log(name, partnerName);
 }
 
 function resetApp() {
