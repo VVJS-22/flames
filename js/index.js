@@ -1,4 +1,4 @@
-import { getNames, removeSimilarities } from './processResult.js'
+import { getNames, removeSimilarities, getFlamesCount, getResult } from './processResult.js'
 
 let form = document.querySelector('form');
 form.addEventListener('reset', () => resetApp());
@@ -11,7 +11,9 @@ function calculateFlames(form) {
     let flames = ['Friend', 'Love', 'Affection', 'Marriage', 'Enemy', 'Sister'];
     let [name, partnerName] = getNames(form);
     let [remainingName, remainingPartnerName] = removeSimilarities(name, partnerName);
-    console.log(remainingName, remainingPartnerName);
+    let flamesCount = getFlamesCount(remainingName, remainingPartnerName);
+    let result = getResult(flamesCount, flames);
+    console.log(result);
 }
 
 function resetApp() {

@@ -16,3 +16,23 @@ export function removeSimilarities(name, partnerName) {
     })
     return [name, partnerName]
 }
+
+export function getFlamesCount(remainingName, remainingPartnerName) {
+    return remainingName.length + remainingPartnerName.length;
+}
+
+export function getResult(flamesCount, flames) {
+    while (flames.length > 1) {
+        let indexToRemove;
+        if (flamesCount > flames.length) {
+            indexToRemove = flamesCount % flames.length - 1;
+        } else {
+            indexToRemove = flamesCount - 1;
+        }
+        flames.splice(indexToRemove, 1);
+        if (indexToRemove > 0) {
+            flames = [...flames.slice(indexToRemove), ...flames.slice(undefined, indexToRemove)];
+        }
+    }
+    return flames[0];
+}
