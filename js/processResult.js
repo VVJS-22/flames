@@ -22,6 +22,9 @@ export function getFlamesCount(remainingName, remainingPartnerName) {
 }
 
 export function getResult(flamesCount, flames) {
+    if (!flamesCount) {
+        return flames[0];
+    }
     let currentIndex = 0;
     while (flames.length > 1) {
         currentIndex = (flamesCount % flames.length - 1 + currentIndex) % flames.length;
