@@ -11,9 +11,15 @@
 <body class="flex gap__20 justify-content__center align-items__center">
     <div id="root" class="border__default flex__column gap__20 align-items__center p-30">
         <h1 class="text-center m-t-10">F.L.A.M.E.S</h1>
-        <form class="flex__column justify-content__center align-items__center gap__10">
-            <input type="text" name="name" id="name" placeholder="Enter your name" required>
-            <input type="text" name="partnerName" id="PartnerName" placeholder="Enter your partner name" required>
+        <form class="flex__column justify-content__center align-items__center">
+            <div class="flex__column gap__10">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" placeholder="Ex: Your name" required pattern="^[a-zA-Z]+\s?[a-zA-Z]*$" autocomplete="off">
+            </div>
+            <div class="flex__column gap__10 m-t-20">
+                <label for="partnerName">Your Partner Name</label>
+                <input type="text" name="partnerName" id="PartnerName" placeholder="Ex: Partner name" required pattern="^[a-zA-Z]+\s?[a-zA-Z]*$" autocomplete="off">
+            </div>
             <div class="flex align-items__center gap__20 m-t-20">
                 <button type="submit">Submit</button>
                 <button type="reset">Reset</button>
