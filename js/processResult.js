@@ -3,8 +3,8 @@ export function getNames(form) {
 }
 
 export function removeSimilarities(name, partnerName) {
-    name = name.trim().toLowerCase();
-    partnerName = partnerName.trim().toLowerCase();
+    name = name.toLowerCase().replaceAll(/\s/g, '');
+    partnerName = partnerName.toLowerCase().replaceAll(/\s/g, '');;
     let nameArray = name.split('');
     nameArray.forEach(letter => {
         let initialLength = partnerName.length;
